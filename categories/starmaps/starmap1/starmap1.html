@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Map 1 - GiftyHearts</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/categories/starmaps/starmap1/starmap1.css" />
+      
+</head>
+
+<body>
+    <body>
+        <!-- Header -->
+        <header></header>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Star Map 1</h1>
+            <p>Personalized Designs for Your Memories</p>
+        </div>
+    
+<!-- Image Slider -->
+<div class="slider-container">
+    <div class="slider">
+        <img src="https://res.cloudinary.com/dpyaxtaot/image/upload/v1733484592/11_.10.2004__HokaaHokaa_ps_fi1_dumlfy.png" alt="Star Map 1">
+        <img src="https://res.cloudinary.com/dpyaxtaot/image/upload/v1733484760/Perfect_1_xtwxwe.png" alt="Star Map 2">
+        <img src="https://via.placeholder.com/400" alt="Star Map 3">
+        <video controls>
+            <source src="/categories/starmaps/starmap1/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="slider-controls">
+        <button onclick="slide(-1)">❮</button>
+        <button onclick="slide(1)">❯</button>
+    </div>
+</div>
+
+
+
+
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+        <!-- Product Info -->
+        <div class="product-info">
+            <h2>Star Map 1</h2>
+            <p>Capture your cherished moments with a personalized star map.</p>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+           <div class="input-group">
+                <label for="location">Enter Location:</label>
+                <input type="text" id="location" placeholder="e.g., Mumbai / paste Google Maps link">
+            </div>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+           <div class="input-group">
+                <label for="date">Select Date & Time:</label>
+                <input type="datetime-local" id="date">
+            </div>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+            <div class="input-group">
+                <label for="name">Enter Name:</label>
+                <input type="text" id="name" placeholder="e.g., John">
+            </div>
+            <div class="input-group">
+                <label for="message">Custom Message:</label>
+                <textarea id="message" placeholder="e.g., The Sky when you were born"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="size">Choose Size:</label>
+                <select id="size" onchange="handleSizeChange()">
+                    <option value="" disabled selected>Select Size</option>
+                    <option value="299">Digital file ₹299</option>
+                    <option value="499">A4 ₹499</option>
+                    <option value="699">A3 ₹699</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="frame">Choose Frame:</label>
+                <select id="frame" onchange="updatePrice()">
+                    <option value="0">Black</option>
+                    <option value="0">White</option>
+                    <option value="200">Wooden Frame (+₹200)</option>
+                </select>
+            </div>
+    
+            <!-- Price Display -->
+            <h3 id="price-display" style="color: #4B0082; margin-bottom: 20px;">Price: ₹299</h3>
+    
+            <button class="chat-button" onclick="sendWhatsAppMessage()">
+                Chat to Customize
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </button>
+        </div>
+
+      <!-- Placeholder for dynamically loaded Add-On Products Section -->
+      <div id="add-on-products-container"></div>
+
+
+        <!-- Additional Info -->
+        <div class="additional-info">
+            <h3>How to Order</h3>
+            <p>Choose your design, fill in the details, and click on "Chat to Customize" to share your personalization requirements.</p>
+            <p>Our team will confirm your order and start creating your unique Star Map!</p>
+            <h3>Specifications</h3>
+            <p>- High-quality print on premium paper</p>
+            <p>- Available in multiple sizes and framing options</p>
+            <p>- 100% customizable designs</p>
+           
+        </div>
+
+
+  <!-- Product Features and Specifications Section -->
+  <div class="product-features">
+    <h3>Your Starmap Order Details</h3>
+    <ul>
+      <li><strong>Dispatch Time:</strong> Within 2-3 business days.</li>
+      <li><strong>Delivery Time:</strong> Standard shipping takes 5-7 business days.</li>
+      <li><strong>Customization:</strong> Personalized star maps with your chosen date, location, and message.</li>
+      <li><strong>Packaging:</strong> Delivered in secure and eco-friendly packaging.</li>
+      <li><strong>Shipping Updates:</strong> Track your order every step of the way.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- polycys Section -->
+<div id="policy"></div>
+    
+<!-- Product Rating Section -->
+<section id="product-rating" class="rating-section">
+    <h2>Product Rating</h2>
+    <div class="rating-display">
+        <div class="stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>☆</span> <!-- Adjust filled stars based on the rating -->
+        </div>
+        <p>4.0 out of 5 stars</p>
+    </div>
+    <p class="total-customers">1,250 customers have purchased this product</p>
+</section>
+
+
+
+        <!-- Footer -->
+        <footer></footer>
+    
+        <!-- Back to Top Button -->
+        <div class="back-to-top" onclick="scrollToTop()">↑</div>
+    
+    
+
+        <script src="/script.js"></script>
+ <script src="/categories/starmaps/starmap1/starmap1.js"></script>
+    
+</body>
+
+</html>

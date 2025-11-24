@@ -1,0 +1,285 @@
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background: url('https://res.cloudinary.com/dpyaxtaot/image/upload/v1733721400/Untitled_design_9_zp9z9v.png') no-repeat center/cover;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero-section h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+/* Image Slider */
+.slider-container {
+    position: relative;
+    max-width: 400px;
+    height: 550px; /* Fixed height */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img, .slider video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images and videos fill the container without distortion */
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.slider video {
+    background-color: black; /* Background for unused space in videos */
+    object-fit: contain; /* Prevent cropping of videos */
+}
+/* Add a hover effect to video elements */
+.slider video:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    transition: filter 0.3s;
+}
+
+/* Optional: Style paused state for videos */
+.slider video:paused {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-controls button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+/* Product Info */
+.product-info {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.product-info h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4B0082;
+}
+
+.product-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4B0082;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #4B0082;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #4B0082;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4B0082;
+}
+
+.input-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+.chat-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #6B5B95, #E6D4FF);
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.chat-button:hover {
+    background: linear-gradient(90deg, #4B0082, #C8BFE7);
+}
+
+.chat-button img {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.additional-info {
+text-align: center;
+margin: 40px auto;
+max-width: 800px;
+background-color: #E6D4FF; /* Light pastel lavender */
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+color: #4B0082;
+font-size: 1rem;
+line-height: 1.6;
+}
+
+.additional-info h3 {
+font-family: 'Pacifico', cursive;
+font-size: 1.5rem;
+color: #4B0082;
+margin-bottom: 10px;
+}
+
+.additional-info p {
+margin-bottom: 10px;
+font-size: 0.9rem;
+}
+
+/* Product Features and Specifications Section */
+/* Product Features Section */
+.product-features {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.product-features h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #4B0082;
+    margin-bottom: 20px;
+}
+
+.product-features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-features li {
+    background-color: #E6D4FF; /* Light pastel lavender */
+    color: #4B0082;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(45% - 20px); /* Responsive two-column layout */
+    max-width: calc(45% - 20px);
+    text-align: left;
+}
+
+.product-features li strong {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.product-features li:hover {
+    background-color: #C8BFE7; /* Slightly darker lavender */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* Product Rating Section */
+.rating-section {
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Subtle border to match the theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Match the theme font */
+}
+
+.rating-section h2 {
+    color: #444; /* Darker gray for headings */
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.rating-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating-display .stars {
+    display: flex;
+    gap: 5px;
+    font-size: 1.8rem; /* Slightly larger stars */
+    color: #ffc107; /* Gold for filled stars */
+}
+
+.rating-display .stars span {
+    color: #e0e0e0; /* Light gray for unfilled stars */
+}
+
+.rating-display .stars span.filled {
+    color: #ffc107; /* Filled stars match the gold tone */
+}
+
+.rating-display p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #555; /* Medium gray for text */
+}
+
+.total-customers {
+    font-size: 1rem;
+    color: #666; /* Subtle text for customer count */
+    margin-top: 10px;
+}
+
+

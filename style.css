@@ -1,0 +1,523 @@
+       /* General Reset */
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #F4E8FF; /* Pastel Lavender */
+        color: #4B0082;
+        scroll-behavior: smooth; /* Smooth scrolling */
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+    body, html {
+        margin: 0; /* Removes default margin */
+        padding: 0; /* Removes default padding */
+        width: 100%; /* Ensures full-width layout */
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+    
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Header */
+    header {
+        header {
+            display: flex; /* Enables flexbox for alignment */
+            justify-content: space-between; /* Distributes logo and menu button */
+            align-items: center; /* Centers items vertically */
+            padding: 10px 20px; /* Adds spacing inside the header box */
+            background-color: #E6D4FF; /* Lavender background */
+            width: 100%; /* Makes header span the entire width */
+            height: 80px; /* Set an appropriate height for the header */
+            box-sizing: border-box; /* Includes padding in width/height calculation */
+            position: sticky; /* Keeps header fixed at the top */
+            top: 0;
+            z-index: 1000; /* Ensures the header is above other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        }
+        
+    }
+
+    header .logo {
+        font-family: 'Pacifico', cursive; /* Stylish font for the logo */
+        font-size: 1.8rem; /* Slightly larger font for prominence */
+        font-weight: bold;
+        color: #4B0082; /* Deep purple for contrast */
+        margin: 0; /* Reset margins */
+        position: absolute; /* Makes the logo independent of flex alignment */
+        left: 50%; /* Moves the logo to the horizontal center */
+        transform: translateX(-50%); /* Centers the logo perfectly */
+    }
+
+    /* Remove underline and default blue color for all links */
+a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits color from parent element */
+}
+
+/* Optionally style the links when hovered */
+a:hover {
+    text-decoration: underline; /* Adds underline only on hover */
+    color: #8359a1; /* Replace with your desired color */
+}
+
+
+    .menu-button {
+       
+        display: flex;
+    flex-direction: column; /* Stacks the lines vertically */
+    gap: 4px; /* Space between lines of the menu icon */
+    background: none; /* No background for the button */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-left: auto; /* Pushes the menu button to the far right */
+    }
+
+    .menu-button div {
+        width: 25px; /* Width of each line in the menu */
+    height: 3px; /* Height of each line */
+    background-color: #4B0082; /* Matches the logo color */
+    border-radius: 2px; /* Rounded edges */
+    }
+
+    nav {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #E6D4FF;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+        font-family: 'Pacifico', cursive;
+        text-decoration: none;
+        font-size: 1rem;
+        color: #4B0082;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #6B5B95;
+    }
+
+    nav .search-bar {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    nav .search-bar input {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #4B0082;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #4B0082;
+    }
+    
+    nav .search-bar button {
+        margin-left: 5px;
+        padding: 8px 15px;
+        background: #4B0082;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    nav .search-bar button:hover {
+        background: #6B5B95;
+    }
+    
+    #search-suggestions {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    #search-suggestions .suggestion-item {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #4B0082;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    #search-suggestions .suggestion-item:last-child {
+        border-bottom: none;
+    }
+    
+    #search-suggestions .suggestion-item:hover {
+        background-color: #E6D4FF;
+        color: #fff;
+    }
+
+    /* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.3s forwards;
+}
+
+.modal-content h3 {
+    color: #4B0082;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    #searchModal {
+        animation: fadeIn 0.3s forwards;
+    }
+    
+    
+
+            /* Hero Section */
+            .hero {
+                text-align: center;
+                background: url('https://res.cloudinary.com/dpyaxtaot/image/upload/v1733721400/Untitled_design_9_zp9z9v.png') no-repeat center/cover;
+                padding: 100px 20px;
+                color: white;
+                position: relative;
+            }
+    
+            .hero h1 {
+                font-family: 'Pacifico', cursive;
+                font-size: 3rem;
+                margin-bottom: 10px;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+    
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            }
+    
+            .hero button {
+                background: linear-gradient(90deg, #6B5B95, #E6D4FF);
+                color: white;
+                font-size: 1rem;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease-in-out;
+            }
+    
+            .hero button:hover {
+                background: linear-gradient(90deg, #4B0082, #C8BFE7);
+                transform: scale(1.1);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            }
+/* Footer */
+footer {
+    background: #E6D4FF;
+    color: #4B0082;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+footer h3 {
+    font-family: 'Pacifico', cursive;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+footer .socials a {
+    color: #4B0082;
+    margin: 0 10px;
+    font-family: 'Pacifico', cursive;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+footer .socials a:hover {
+    color: #6B5B95;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4B0082;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top.show {
+    display: block;
+}    
+
+/* Add-On Products Section */
+/* Add-On Products Section */
+.add-on-products {
+    margin: 40px auto;
+    max-width: 1000px;
+    text-align: center;
+    position: relative; /* Ensure carousel buttons align properly */
+    padding: 0 20px; /* Add some horizontal padding for better spacing */
+}
+
+.add-on-products h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #4B0082;
+    margin-bottom: 20px;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling for touch */
+    gap: 20px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    justify-content: flex-start; /* Align items to the start */
+    position: relative; /* For buttons alignment */
+    -webkit-overflow-scrolling: touch; /* Enable smooth touch scrolling */
+}
+.carousel > * {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 200px; /* Adjust as per your design */
+    margin-right: 10px; /* Adjust gap between items */
+}
+.carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for better aesthetics */
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 150px;
+    text-align: center;
+    background-color: #E6D4FF;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.carousel-item p {
+    font-size: 0.9rem;
+    color: #4B0082;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn {
+    left: 5px; /* Adjusted for better visibility */
+}
+
+.next-btn {
+    right: 5px; /* Adjusted for better visibility */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .carousel {
+        gap: 30px; /* Increase gap for larger screens */
+    }
+
+    .carousel-item {
+        width: 180px; /* Slightly larger items for larger screens */
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel {
+        gap: 15px; /* Adjust gap for smaller screens */
+        padding: 0; /* Remove extra padding for mobile */
+    }
+
+    .carousel-item {
+        width: 120px; /* Smaller items for smaller screens */
+    }
+
+    .carousel-btn {
+        width: 35px; /* Smaller buttons for mobile */
+        height: 35px;
+    }
+
+    .prev-btn {
+        left: 2px; /* Adjusted for smaller screens */
+    }
+
+    .next-btn {
+        right: 2px; /* Adjusted for smaller screens */
+    }
+}
+
+
+.policy-section {
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.policy-toggle {
+    background-color: #4B0082;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.policy-toggle:hover {
+    background-color: #371466;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.policy-content {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #E6D4FF, #FFFFFF);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4B0082;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.policy-content p {
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.policy-content strong {
+    color: #371466;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
